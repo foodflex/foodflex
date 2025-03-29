@@ -1,0 +1,72 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+export default function PetFriendlyCafe() {
+  return (
+    <div className="min-h-screen bg-cover bg-center flex flex-col items-center p-4 text-white" style={{ backgroundImage: "url('/mnt/data/2BCF2033-B657-4B11-8DC4-035E6EF34479.png')" }}>
+      <motion.img 
+        src="/mnt/data/A_logo_for_\"Caffle,\"_a_dog-friendly_café,_is_displ.png" 
+        alt="Caffle Logo" 
+        className="w-64 h-auto mt-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      />
+      <motion.h1 
+        className="text-5xl font-bold mt-6 text-center bg-black bg-opacity-70 p-3 rounded"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        Добро пожаловать в Caffle
+      </motion.h1>
+      <p className="mt-4 text-lg text-center max-w-2xl bg-black bg-opacity-70 p-3 rounded">
+        Первая в Одессе pet-friendly кофейня! У нас уютная атмосфера, вкусный кофе и отдельная зона отдыха для собак.
+      </p>
+      
+      <div className="mt-10 max-w-4xl w-full">
+        <h2 className="text-3xl font-semibold text-center bg-black bg-opacity-70 p-3 rounded">Меню</h2>
+        <div className="mt-4 grid grid-cols-2 gap-4">
+          <Card className="bg-black bg-opacity-70 p-4 shadow-lg">
+            <CardContent>
+              <h3 className="text-xl font-semibold">Кофе</h3>
+              <ul className="list-disc list-inside mt-2">
+                <li>Эспрессо</li>
+                <li>Капучино</li>
+                <li>Латте</li>
+                <li>Моккачино</li>
+              </ul>
+            </CardContent>
+          </Card>
+          <Card className="bg-black bg-opacity-70 p-4 shadow-lg">
+            <CardContent>
+              <h3 className="text-xl font-semibold">Десерты</h3>
+              <ul className="list-disc list-inside mt-2">
+                <li>Чизкейк</li>
+                <li>Тирамису</li>
+                <li>Круассаны</li>
+                <li>Шоколадный торт</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+      
+      <div className="mt-10 max-w-4xl w-full">
+        <h2 className="text-3xl font-semibold text-center bg-black bg-opacity-70 p-3 rounded">Галерея</h2>
+        <div className="mt-4 grid grid-cols-3 gap-4">
+          <img src="/images/dog1.jpg" alt="Собака" className="w-full h-40 object-cover rounded-lg" />
+          <img src="/images/dog2.jpg" alt="Собака" className="w-full h-40 object-cover rounded-lg" />
+          <img src="/images/dog3.jpg" alt="Собака" className="w-full h-40 object-cover rounded-lg" />
+          <img src="/images/coffee1.jpg" alt="Кофе" className="w-full h-40 object-cover rounded-lg" />
+          <img src="/images/coffee2.jpg" alt="Кофе" className="w-full h-40 object-cover rounded-lg" />
+          <img src="/images/dessert1.jpg" alt="Десерт" className="w-full h-40 object-cover rounded-lg" />
+        </div>
+      </div>
+
+      <Button className="mt-10 text-lg px-6 py-3 rounded-2xl bg-yellow-500 text-black hover:bg-yellow-600">
+        Забронировать столик
+      </Button>
+    </div>
+  );
+}
